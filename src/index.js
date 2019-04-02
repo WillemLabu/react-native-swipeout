@@ -27,6 +27,7 @@ const SwipeoutBtn = createReactClass({
     text: PropTypes.node,
     type: PropTypes.string,
     underlayColor: PropTypes.string,
+    fontSize: PropTypes.number,
   },
 
   getDefaultProps: function () {
@@ -41,6 +42,7 @@ const SwipeoutBtn = createReactClass({
       text: 'Click me',
       type: '',
       width: 0,
+      fontSize: 12,
     };
   },
 
@@ -70,7 +72,7 @@ const SwipeoutBtn = createReactClass({
       width: btn.width,
     }]);
 
-    var styleSwipeoutBtnText = [styles.swipeoutBtnText];
+    var styleSwipeoutBtnText = [styles.swipeoutBtnText, { fontSize: btn.fontSize }];
 
     //  apply text color
     if (btn.color) styleSwipeoutBtnText.push({color: btn.color });
